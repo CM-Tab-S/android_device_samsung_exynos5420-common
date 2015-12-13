@@ -91,6 +91,19 @@ PRODUCT_PACKAGES += \
     libnetcmdiface \
     macloader
 
+# RANDOM NUMBER GENERATOR
+PRODUCT_PACKAGES += \
+    exyrngd
+
+# adb has root
+ADDITIONAL_DEFAULT_PROPERTIES += \
+    ro.adb.secure=0 \
+    persist.adb.notify=0 \
+    ro.secure=0 \
+    persist.sys.root_access=3 \
+    ro.debuggable=1 \
+    persist.service.adb.enable=1
+
 # CPU producer to CPU consumer not supported
 PRODUCT_PROPERTY_OVERRIDES += \
  ro.bq.gpu_to_cpu_unsupported=1
@@ -101,6 +114,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Charger
 PRODUCT_PACKAGES += \
     charger_res_images
+
+$(call inherit-product, hardware/samsung_slsi-cm/exynos5420/exynos5420.mk)
 
 # call dalvik heap config
 $(call inherit-product-if-exists, frameworks/native/build/phone-xxhdpi-2048-dalvik-heap.mk)
