@@ -117,26 +117,6 @@ BOARD_USES_SCALER := true
 BOARD_SEPOLICY_DIRS += \
    device/samsung/exynos5420-common/sepolicy
 
-BOARD_SEPOLICY_UNION += \
-    debuggerd.te \
-    device.te \
-    domain.te \
-    drmserver.te \
-    file.te \
-    file_contexts \
-    gpsd.te \
-    init.te \
-    kernel.te \
-    macloader.te \
-    mediaserver.te \
-    service_contexts \
-    servicemanager.te \
-    sswap.te \
-    system_app.te \
-    system_server.te \
-    vold.te \
-    wpa.te
-
 # Webkit
 ENABLE_WEBGL := true
 
